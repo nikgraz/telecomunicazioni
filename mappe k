@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karnaugh Map Builder and Solver</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        body {
+            font-family: 'Merriweather', serif;
+        }
+        header, footer {
+            background-color: #ff0000; /* Colore di sfondo nero */
+            color: rgb(0, 0, 0); /* Colore del testo bianco */
+            text-align: center;
+            padding: 15px 0;
+        }
+        .explanation {
+            margin-bottom: 20px;
+        }
+        .container {
+            margin-top: 30px; /* Aggiunta distanziazione tra header e contenuto */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h2>Mappe di Karnaugh</h2>
+    </header>
+
+    <div class="container">
+        <p class="explanation">Le mappe di Karnaugh (o <strong>K-map</strong>) sono uno strumento grafico utilizzato per semplificare espressioni booleane. Esse permettono di trovare la forma più semplice di una funzione logica, riducendo il numero di variabili in gioco e ottimizzando il circuito logico.</p>
+
+        <p class="explanation">In pratica, una mappa di Karnaugh è una tabella in cui le combinazioni di variabili booleane sono disposte in modo che le celle adiacenti differiscano per una sola variabile. Le celle contenenti 1 rappresentano le situazioni in cui la funzione è vera, mentre quelle con 0 rappresentano i valori falsi.</p>
+
+        <p class="explanation">L'obiettivo è raggruppare i 1 adiacenti in blocchi rettangolari di dimensioni che siano potenze di 2 (1, 2, 4, 8, ecc.). Ogni gruppo così formato corrisponde a una parte semplificata della funzione booleana.</p>
+
+        <p class="explanation">Questa tecnica è particolarmente utile per ridurre il numero di porte logiche necessarie per implementare una funzione.</p>
+    </div>
+
+    <div class="container my-5">
+        <div id="EquationDiv" class="mb-4"></div>
+
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <h4 class="text-center"><strong>Truth Table</strong></h4>
+                <div id="TruthTableDiv" style="color: rgb(250, 0, 0);" class="d-flex justify-content-center">
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-4">
+                <h4 class="text-center"><strong>Karnaugh Map</strong></h4>
+                <div id="KarnoMapDiv" style="color: rgb(0, 0, 0);" class="d-flex justify-content-center">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
+    <script src="app.js"></script>
+</body>
+</html>
