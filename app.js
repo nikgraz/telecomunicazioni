@@ -87,7 +87,7 @@ function HighlightColor( Value )
 {
     if (Value=="1") return "#005F6A";
     if (Value=="0") return "#000000";
-    return "gray";
+    return "gred";
 }
 
 function RectHighlightColor()
@@ -570,7 +570,7 @@ function GenerateTruthTableHTML()
 {
     var Text = "<table ID=\"TruthTableID\" style=\"text-align:center\">";
     {
-        Text = Text + "<thead style=\"background: #adadad;text-align:center;color:black;\"><tr>";
+        Text = Text + "<thead style=\"background:rgb(255, 123, 0);text-align:center;color:black;\"><tr>";
         var i=0;
         for (i=0; i<VariableCount; i++)
         {
@@ -612,7 +612,7 @@ function GenerateKarnoMapHTML()
 {
     var Text = "<table><thead><tr>";
     var h,w;
-    Text = Text + "<th colspan=\"2\" ></th><th style=\"background: #adadad;border-bottom:2px solid rgb(31, 39, 55);color:black;\" colspan="+(KMap.Width)+">";
+    Text = Text + "<th colspan=\"2\" ></th><th style=\"background:rgb(202, 91, 0);border-bottom:2px solid rgb(0, 67, 201);color:black;\" colspan="+(KMap.Width)+">";
 
     for (i=0; i<KMap.XVariables; i++)
     {
@@ -625,7 +625,7 @@ function GenerateKarnoMapHTML()
 
     for (i=0; i<KMap.Width; i++)
     {
-        Text += "<th class=\"header-color\" style=\"background: #adadad;color:black;\">"+BinaryString(BitOrder[i],KMap.XVariables)+"</th>";
+        Text += "<th class=\"header-color\" style=\"background:rgb(241, 119, 5);color:black;\">"+BinaryString(BitOrder[i],KMap.XVariables)+"</th>";
     }
     Text+="</tr>";
     
@@ -639,13 +639,13 @@ function GenerateKarnoMapHTML()
         }
         if (h==0)
         {
-            Text += "<th style=\"background: #adadad;color:black; width: 15%\" rowspan="+((KMap.Height) + 2)  +">";
+            Text += "<th style=\"background:rgb(255, 148, 9);color:black; width: 15%\" rowspan="+((KMap.Height) + 2)  +">";
             for (i=0; i<KMap.YVariables; i++)
             {
                 Text += "<b class=\"header-color\">" + VariableNames[i+KMap.XVariables] + "</b>";
             }
         }
-        Text += "<th class=\"header-color\" style=\"border-left: 2px solid black;background: #adadad;color:black;width: 15%\" >"+BinaryString(BitOrder[h],KMap.YVariables)+"</th>";
+        Text += "<th class=\"header-color\" style=\"border-left: 2px solid black;background:rgb(34, 12, 231);color:black;width: 15%\" >"+BinaryString(BitOrder[h],KMap.YVariables)+"</th>";
 
         for (w=0; w<KMap.Width; w++)
         {
