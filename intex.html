@@ -24,35 +24,33 @@
             margin-top: 30px; /* Aggiunta distanziazione tra header e contenuto */
         }
     </style>
-</head>
-<body>
-    <header>
-        <h2>Mappe di Karnaugh</h2>
+     </head>
+  <body>
+    <h2>Mappe di Karnaugh</h2>
     </header>
-
-    <div class="container">
-        <p class="explanation">Le mappe di Karnaugh (o <strong>K-map</strong>) sono uno strumento grafico utilizzato per semplificare espressioni booleane. Esse permettono di trovare la forma più semplice di una funzione logica, riducendo il numero di variabili in gioco e ottimizzando il circuito logico.</p>
-
-        <p class="explanation">In pratica, una mappa di Karnaugh è una tabella in cui le combinazioni di variabili booleane sono disposte in modo che le celle adiacenti differiscano per una sola variabile. Le celle contenenti 1 rappresentano le situazioni in cui la funzione è vera, mentre quelle con 0 rappresentano i valori falsi.</p>
-
-        <p class="explanation">L'obiettivo è raggruppare i 1 adiacenti in blocchi rettangolari di dimensioni che siano potenze di 2 (1, 2, 4, 8, ecc.). Ogni gruppo così formato corrisponde a una parte semplificata della funzione booleana.</p>
-
-        <p class="explanation">Questa tecnica è particolarmente utile per ridurre il numero di porte logiche necessarie per implementare una funzione.</p>
-    </div>
-
+    <p class="explanation">La mappa di Karnaugh è una rappresentazione grafica della tabella della verità di una funzione booleana, utile per semplificare le espressioni logiche. Essa è costituita da un rettangolo con 2^n caselle, dove ogni casella rappresenta una combinazione delle variabili di ingresso. Le caselle adiacenti cambiano solo una variabile (in direzione orizzontale o verticale), e le caselle agli estremi sono considerate adiacenti tra loro.</p>
+    <p class="explanation">Per semplificare una funzione logica tramite la mappa di Karnaugh, si seguono questi passaggi:</p>
+    <ol>
+        <li><strong>Individuazione dei gruppi:</strong> Si formano gruppi di 1 adiacenti, con il numero di 1 che deve essere una potenza di 2 (2, 4, 8, ecc.).</li>
+        <li><strong>Selezione dei gruppi:</strong> Si deve scegliere il minor numero di gruppi che coprano tutti gli 1 della mappa.</li>
+        <li><strong>Esclusione delle variabili variabili:</strong> Per ogni gruppo, si identificano le variabili che non cambiano tra le caselle adiacenti e si estraggono i termini corrispondenti (variabili in forma vera o negata).</li>
+        <li><strong>Condizioni di indifferenza:</strong> Quando alcune combinazioni di ingresso non hanno valore definito, si usano simboli come ɸ o X. Tali condizioni possono essere trattate come 1 o 0, a seconda di cosa semplifica meglio la funzione.</li>
+    </ol>
+    <p class="explanation">La mappa di Karnaugh semplifica così l'espressione booleana, riducendo il numero di termini e facilitando la progettazione di circuiti logici.</p>
+</div>
     <div class="container my-5">
         <div id="EquationDiv" class="mb-4"></div>
 
         <div class="row">
             <div class="col-md-6 mb-4">
-                <h4 class="text-center"><strong>Truth Table</strong></h4>
+                <h4 class="text-center"><strong>tabella</strong></h4>
                 <div id="TruthTableDiv" style="color: rgb(250, 0, 0);" class="d-flex justify-content-center">
                 </div>
             </div>
 
             <div class="col-md-6 mb-4">
-                <h4 class="text-center"><strong>Karnaugh Map</strong></h4>
-                <div id="KarnoMapDiv" style="color: rgb(0, 0, 0);" class="d-flex justify-content-center">
+                <h4 class="text-center"><strong>K Map</strong></h4>
+                <div id="KarnoMapDiv" style="color: rgb(245, 0, 0);" class="d-flex justify-content-center">
                 </div>
             </div>
         </div>
